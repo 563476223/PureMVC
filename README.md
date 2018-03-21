@@ -6,8 +6,7 @@
 ### Model与Proxy
 Model保存Proxy的引用。Proxy 负责操作数据模型，与远程服务通信存取数据。
 ### View与Mediator
-View保存Mediator的引用。Mediator 操作具体的视图组件
-
+View保存Mediator的引用。Mediator 操作具体的视图组件。
 ### Controller和Commond
 Controller保存了Commond的引用。Commond可以获取Proxy对象并与之交互，可以发送Notification执行其他的Commond，其业务逻辑可以在这里实现。
 ###Facade和Core
