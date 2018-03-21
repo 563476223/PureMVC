@@ -1,0 +1,22 @@
+##ignore this file##
+[Bb]in/
+[Ll]ibrary/
+[Tt]emp/
+[Tt]mp/
+[Oo]bj/
+[Ss]treamingAssets/
+##filter databfilesln file##
+*.mdb  
+*.ldb  
+*.sln   
+*.log
+*.suo
+*.csproj
+*.vs
+*.userprefs
+
+# Unity3D generated meta files
+*.pidb.meta
+
+# Unity3D Generated File On Crash Reports
+sysinfo.txt
