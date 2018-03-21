@@ -73,6 +73,10 @@ namespace MVC.Patterns
             return mView.UnRegisterMediator(name);
         }
 
+        public T RetrieveMediator<T>() where T : Mediator
+        {
+            return mView.RetrieveMediator<T>();
+        }
         public bool RegisterCommond(Commond commond)
         {
             return mController.RegisterCommond(commond);
@@ -99,5 +103,7 @@ namespace MVC.Patterns
             mController.Init();
             mModel.Init();
         }
+
+
     }
 }
