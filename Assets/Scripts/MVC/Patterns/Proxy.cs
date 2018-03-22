@@ -5,10 +5,11 @@
 // ========================================================
 using System.Collections;
 using System.Collections.Generic;
+using MVC.Interface;
 
 namespace MVC.Patterns
 {
-    public class Proxy
+    public class Proxy:IEventDispatcher
     {
         private string name = "";
         public string Name
@@ -22,6 +23,21 @@ namespace MVC.Patterns
         public virtual void Init()
         {
 
+        }
+
+        public void DispatchEvent(int type)
+        {
+            DispatchEvent(type, null, null);
+        }
+
+        public void DispatchEvent(int type, object data)
+        {
+            DispatchEvent(type, data,null);
+        }
+
+        public void DispatchEvent(int type, object data, object sender)
+        {
+            Facade.Instance.DispatchEvent(type, data, sender);
         }
     }
 }

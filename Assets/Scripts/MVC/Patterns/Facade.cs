@@ -7,13 +7,14 @@ using System.Collections;
 using System.Collections.Generic;
 using MVC.Interface;
 using MVC.Core;
+using MVC.Event;
 
 namespace MVC.Patterns
 {
     /// <summary>
     /// 方便Core之间通信，外部无需关心内部实现
     /// </summary>
-    public abstract class Facade:IModel,IView,IController
+    public abstract class Facade:EventDispatcher,IModel,IView,IController
     {
         IModel mModel = null;
         IView mView = null;
@@ -103,7 +104,5 @@ namespace MVC.Patterns
             mController.Init();
             mModel.Init();
         }
-
-
     }
 }
