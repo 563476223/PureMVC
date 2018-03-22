@@ -19,5 +19,6 @@ public class Launcher : MonoBehaviour
     {
         AssetsFactory.Instance.InitAssetFactory();
         LuaManager.Instance.Luanch();
+        GameFacade.Instance.Init();
     }
 }

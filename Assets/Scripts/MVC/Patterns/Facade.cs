@@ -98,7 +98,7 @@ namespace MVC.Patterns
             return mController.UnRegisterCommond(name);
         }
 
-        public void Init()
+        public virtual void Init()
         {
             mView.Init();
             mController.Init();

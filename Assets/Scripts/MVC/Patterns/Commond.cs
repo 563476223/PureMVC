@@ -21,6 +21,11 @@ namespace MVC.Patterns
             }
         }
 
+        public Commond(string name)
+        {
+            this.name = name;
+        }
+
         public virtual void Init()
         {
 
@@ -55,6 +60,21 @@ namespace MVC.Patterns
         public void DispatchEvent(int type, object data, object sender)
         {
             Facade.Instance.DispatchEvent(type, data, sender);
+        }
+
+        public T RetrieveMediator<T>() where T:Mediator
+        {
+            return Facade.Instance.RetrieveMediator<T>();
+        }
+
+        public T RetrieveProxy<T>() where T:Proxy
+        {
+            return Facade.Instance.RetrieveProxy<T>();
+        }
+
+        public T RetrieveCommond<T>() where T:Commond
+        {
+            return Facade.Instance.RetrieveCommond<T>();
         }
     }
 }

@@ -20,6 +20,11 @@ namespace MVC.Patterns
             }
         }
 
+        public Proxy(string name)
+        {
+            this.name = name;   
+        }
+
         public virtual void Init()
         {
 
@@ -38,6 +43,16 @@ namespace MVC.Patterns
         public void DispatchEvent(int type, object data, object sender)
         {
             Facade.Instance.DispatchEvent(type, data, sender);
+        }
+
+        /// <summary>
+        /// 只负责数据交换，不能持有UI的引用
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public T RetrieveProxy<T>() where T : Proxy
+        {
+            return Facade.Instance.RetrieveProxy<T>();
         }
     }
 }

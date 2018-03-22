@@ -20,6 +20,11 @@ namespace MVC.Patterns
             }
         }
 
+        public Mediator(string name)
+        {
+            this.name = name;
+        }
+
         public virtual void Init()
         {
 
@@ -53,6 +58,21 @@ namespace MVC.Patterns
         public void RemoveEventListener(int type, Event.EventHandle handle)
         {
             Facade.Instance.RemoveEventListener(type, handle);
+        }
+
+        public T RetrieveMediator<T>() where T : Mediator
+        {
+            return Facade.Instance.RetrieveMediator<T>();
+        }
+
+        public T RetrieveProxy<T>() where T : Proxy
+        {
+            return Facade.Instance.RetrieveProxy<T>();
+        }
+
+        public T RetrieveCommond<T>() where T : Commond
+        {
+            return Facade.Instance.RetrieveCommond<T>();
         }
     }
 }
